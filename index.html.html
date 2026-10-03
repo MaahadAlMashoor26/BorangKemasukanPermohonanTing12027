@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borang Permohonan Kemasukan T1 MMI27</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-green: #064e3b;
+            --primary-emerald: #047857;
+            --emerald-light: #ecfdf5;
+            --gold-accent: #d97706;
+            --gold-hover: #b45309;
+            --gold-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            --bg-neutral: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 25px -5px rgba(6, 78, 59, 0.08), 0 8px 10px -6px rgba(6, 78, 59, 0.04);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-neutral);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+            /* Corak Geometri Islamik Halus untuk Latar Belakang */
+            background-image: radial-gradient(#047857 0.75px, transparent 0.75px), radial-gradient(#047857 0.75px, var(--bg-neutral) 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            background-color: #f1f5f9;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        /* Header Gaya Islamik Moden */
+        .header {
+            background: linear-gradient(135deg, #022c22 0%, var(--primary-green) 50%, var(--primary-emerald) 100%);
+            color: #ffffff;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            border-bottom: 4px solid var(--gold-accent);
+        }
+
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 50% 120%, rgba(217, 119, 6, 0.15), transparent 70%);
+            pointer-events: none;
+        }
+
+        .bismillah {
+            font-family: 'Amiri', serif;
+            font-size: 28px;
+            color: #fbbf24;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+
+        .header h2 {
+            font-size: 16px;
+            font-weight: 400;
+            color: #a7f3d0;
+        }
+
+        .form-body {
+            padding: 40px 35px;
+        }
+
+        /* Kad Maklumat / Info Box */
+        .info-card {
+            background-color: #ffffff;
+            border: 1px solid #d1fae5;
+            border-left: 5px solid var(--primary-emerald);
+            border-radius: 12px;
+            padding: 22px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .info-card.gold-style {
+            border-color: #fef3c7;
+            border-left-color: var(--gold-accent);
+        }
+
+        .info-card h3 {
+            font-size: 16px;
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-card.gold-style h3 {
+            color: #92400e;
+        }
+
+        .info-card ol, .info-card ul {
+            padding-left: 20px;
+            color: var(--text-muted);
+            font-size: 14.5px;
+        }
+
+        .info-card li {
+            margin-bottom: 8px;
+        }
+
+        /* Pautan Butang */
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 13.5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            margin-top: 8px;
+        }
+
+        .btn-pdf {
+            background-color: var(--emerald-light);
+            color: var(--primary-emerald);
+            border: 1px solid #a7f3d0;
+        }
+
+        .btn-pdf:hover {
+            background-color: #d1fae5;
+            transform: translateY(-1px);
+        }
+
+        .btn-whatsapp {
+            background-color: #ecfdf5;
+            color: #047857;
+            border: 1px solid #a7f3d0;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #10b981;
+            color: white;
+            border-color: #10b981;
+            transform: translateY(-1px);
+        }
+
+        /* Tajuk Bahagian Form */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 35px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        .section-header i {
+            color: var(--gold-accent);
+            font-size: 18px;
+            background: #fef3c7;
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        .section-header h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Medan Input */
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        label .required {
+            color: #ef4444;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        textarea,
+        input[type="file"] {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid var(--border-color);
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 14px;
+            color: var(--text-main);
+            background-color: #f8fafc;
+            transition: all 0.2s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="tel"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-emerald);
+            background-color: #ffffff;
+            box-shadow: 0 0 0 4px rgba(4, 120, 87, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        /* Muat Naik Fail Custom */
+        input[type="file"] {
+            background: #ffffff;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        input[type="file"]::file-selector-button {
+            background-color: var(--emerald-light);
+            color: var(--primary-emerald);
+            border: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            margin-right: 12px;
+            transition: background 0.2s;
+        }
+
+        input[type="file"]::file-selector-button:hover {
+            background-color: #d1fae5;
+        }
+
+        /* Radio Pilihan Jantina */
+        .radio-options {
+            display: flex;
+            gap: 15px;
+        }
+
+        .radio-card {
+            flex: 1;
+            position: relative;
+        }
+
+        .radio-card input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .radio-card label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            border: 1.5px solid var(--border-color);
+            border-radius: 10px;
+            background-color: #f8fafc;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+            margin-bottom: 0;
+        }
+
+        .radio-card input:checked + label {
+            border-color: var(--primary-emerald);
+            background-color: var(--emerald-light);
+            color: var(--primary-emerald);
+            font-weight: 700;
+        }
+
+        /* Perakuan Checkbox */
+        .checkbox-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background-color: #f8fafc;
+            padding: 16px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            margin-top: 10px;
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary-emerald);
+            margin-top: 2px;
+            cursor: pointer;
+        }
+
+        .checkbox-container label {
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-bottom: 0;
+            cursor: pointer;
+            line-height: 1.5;
+        }
+
+        /* Butang Hantar Gold Gradient */
+        .submit-btn {
+            width: 100%;
+            background: var(--gold-gradient);
+            color: #ffffff;
+            border: none;
+            padding: 16px;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-top: 30px;
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(217, 119, 6, 0.35);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Responsive UI */
+        @media (max-width: 640px) {
+            body {
+                padding: 15px 10px;
+            }
+            .form-body {
+                padding: 25px 20px;
+            }
+            .radio-options {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header Islamik Moden -->
+    <div class="header">
+        <div class="bismillah">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+        <h1>MAAHAD AL MASHOOR AL ISLAMI</h1>
+        <h2>Permohonan Kemasukan Tingkatan 1 (Sesi 2027)</h2>
+    </div>
+
+    <div class="form-body">
+        
+        <!-- Syarat Kemasukan -->
+        <div class="info-card">
+            <h3><i class="fa-solid fa-graduation-cap"></i> Syarat Kemasukan</h3>
+            <ol>
+                <li>Lulus Ujian Kemasukan yang dikendalikan oleh pihak sekolah.</li>
+                <li>Penilaian Pelajar:
+                    <ul style="margin-top: 5px; margin-bottom: 5px;">
+                        <li><strong>Ujian Bertulis:</strong> Bahasa Arab, Bahasa Inggeris & Matematik</li>
+                        <li><strong>Ujian Lisan:</strong> Bacaan Al-Quran & Hafazan (Surah Ad-Dhuha hingga An-Nas)</li>
+                    </ul>
+                </li>
+                <li>Hanya warganegara berumur tahun kelahiran <strong>2014</strong> sahaja yang layak memohon.</li>
+            </ol>
+        </div>
+
+        <!-- Panduan Permohonan -->
+        <div class="info-card gold-style">
+            <h3><i class="fa-solid fa-clipboard-list"></i> Panduan Permohonan</h3>
+            <ol>
+                <li>Isi borang permohonan dalam talian ini dengan lengkap.</li>
+                <li>Muat turun borang fizikal melalui pautan berikut:
+                    <br>
+                    <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:a7d862e1-6f81-45e0-9426-51bc272bd76e" target="_blank" class="btn-action btn-pdf">
+                        <i class="fa-solid fa-file-pdf"></i> Muat Turun Borang (PDF)
+                    </a>
+                </li>
+                <li>Tarikh tutup permohonan: <strong>6 November</strong>.</li>
+                <li>Waris <strong>WAJIB</strong> menyertai kumpulan WhatsApp rasmi untuk maklumat temuduga:
+                    <br>
+                    <a href="https://chat.whatsapp.com/HMvnWaEJjFg0giNG0kNojX" target="_blank" class="btn-action btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> Sertai Group WhatsApp Temuduga
+                    </a>
+                </li>
+                <li>Tarikh Temuduga: <strong>14 November 2026 (Sabtu)</strong>.</li>
+                <li>Bayaran pendaftaran sebanyak <strong>RM10</strong> dikenakan semasa penyerahan borang di pejabat sekolah.</li>
+            </ol>
+        </div>
+
+        <!-- Form Permohonan -->
+        <form id="islamicForm" onsubmit="handleFormSubmit(event)">
+            
+            <!-- Bahagian 1 -->
+            <div class="section-header">
+                <i class="fa-solid fa-user-graduate"></i>
+                <h4>Maklumat Pelajar</h4>
+            </div>
+
+            <div class="form-group">
+                <label for="namaPelajar">Nama Pelajar <span class="required">*</span></label>
+                <input type="text" id="namaPelajar" required placeholder="Nama penuh mengikut MyKad">
+            </div>
+
+            <div class="form-group">
+                <label>Jantina <span class="required">*</span></label>
+                <div class="radio-options">
+                    <div class="radio-card">
+                        <input type="radio" id="lelaki" name="jantina" value="LELAKI" required>
+                        <label for="lelaki"><i class="fa-solid fa-mars"></i> Lelaki</label>
+                    </div>
+                    <div class="radio-card">
+                        <input type="radio" id="perempuan" name="jantina" value="PEREMPUAN" required>
+                        <label for="perempuan"><i class="fa-solid fa-venus"></i> Perempuan</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="icPelajar">No. Kad Pengenalan <span class="required">*</span></label>
+                <input type="text" id="icPelajar" required placeholder="Contoh: 140512071234">
+            </div>
+
+            <div class="form-group">
+                <label for="sekolahTerkini">Sekolah Rendah Terkini <span class="required">*</span></label>
+                <input type="text" id="sekolahTerkini" required placeholder="Nama sekolah rendah pemohon">
+            </div>
+
+            <div class="form-group">
+                <label for="alamatTerkini">Alamat Terkini <span class="required">*</span></label>
+                <textarea id="alamatTerkini" required placeholder="Alamat rumah lengkap"></textarea>
+            </div>
+
+            <!-- Bahagian 2 -->
+            <div class="section-header">
+                <i class="fa-solid fa-users"></i>
+                <h4>Maklumat Ibu Bapa / Waris</h4>
+            </div>
+
+            <div class="form-group">
+                <label for="noTelBapa">No. Telefon Bapa <span class="required">*</span></label>
+                <input type="tel" id="noTelBapa" required placeholder="Contoh: 0123456789">
+            </div>
+
+            <div class="form-group">
+                <label for="noTelIbu">No. Telefon Ibu <span class="required">*</span></label>
+                <input type="tel" id="noTelIbu" required placeholder="Contoh: 0198765432">
+            </div>
+
+            <!-- Bahagian 3 -->
+            <div class="section-header">
+                <i class="fa-solid fa-file-arrow-up"></i>
+                <h4>Muat Naik Dokumen</h4>
+            </div>
+
+            <div class="form-group">
+                <label for="pbdFile">Keputusan PBD <span class="required">*</span></label>
+                <input type="file" id="pbdFile" accept=".pdf,.png,.jpg,.jpeg" required>
+            </div>
+
+            <div class="form-group">
+                <label for="upkkFile">Keputusan UPKK <span class="required">*</span></label>
+                <input type="file" id="upkkFile" accept=".pdf,.png,.jpg,.jpeg" required>
+            </div>
+
+            <!-- Bahagian Perakuan -->
+            <div class="section-header">
+                <i class="fa-solid fa-pen-nib"></i>
+                <h4>Perakuan</h4>
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="perakuan" required>
+                <label for="perakuan">Saya mengaku bahawa semua maklumat yang diberikan adalah benar dan betul. Sekiranya maklumat didapati palsu, pihak sekolah berhak membatalkan permohonan ini.</label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">
+                <i class="fa-solid fa-paper-plane"></i> Hantar Permohonan
+            </button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        
+        const nama = document.getElementById('namaPelajar').value;
+        const ic = document.getElementById('icPelajar').value;
+
+        // Semakan ringkas tahun lahir 2014 mengikut syarat
+        if (ic.length >= 2) {
+            const tahunLahir = ic.substring(0, 2);
+            if (tahunLahir !== '14') {
+                alert('Peringatan: Syarat kelayakan khas untuk pelajar lahir pada tahun 2014 sahaja.');
+                return;
+            }
+        }
+
+        alert(`Alhamdulillah, permohonan untuk ${nama} telah berjaya dihantar.\n\nSila pastikan anda menyertai Group WhatsApp dan memuat turun borang fizikal untuk diserahkan ke pejabat.`);
+    }
+</script>
+
+</body>
+</html>
